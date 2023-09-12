@@ -1,0 +1,59 @@
+@mixin sp {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin ipad {
+  @media screen and (max-width: 950px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (max-width: 1367px) {
+    @content;
+  }
+}
+html {
+  // font-size: calc(10 / 414 * 100vw);
+  // height: 100%;
+
+  // @media screen and (min-width: 769px) and (max-width: 1800px) {
+  //   font-size: calc(10 / 1800 * 100vw);
+  // }
+
+  @include tablet() {
+    font-size: calc(10 / 900 * 100vw);
+  }
+  @include sp() {
+    font-size: calc(10 / 390 * 100vw) !important;
+  }
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.sp-b {
+  display: none;
+}
+.pc-b {
+  display: block;
+}
+@include sp() {
+  .sp-b {
+    display: block;
+  }
+  .pc-b {
+    display: none;
+  }
+}
