@@ -33,7 +33,7 @@
           <tr>
             <th>売掛先企業の本社所在地</th>
             <td>
-              {{ $application->prefect}}[city]
+              {{ $application->prefect}}{{ $application->city}}
             </td>
           </tr>
           <tr>
@@ -136,6 +136,12 @@
               {{$application->amount}}万円
             </td>
           </tr>
+          <tr>
+            <th>ご希望のファクタリング形式</th>
+            <td>
+              {{$application->format}}万円
+            </td>
+          </tr>
         </table>
         <h4>＜売掛先企業の情報入力＞</h4>
 
@@ -150,6 +156,10 @@
           </tr>
           <tr>
             <th>その他情報</th>
+            <td>{{ $application->company_other}}</td>
+          </tr>
+          <tr>
+            <th>電話番号</th>
             <td>{{ $application->company_other}}</td>
           </tr>
         </table>

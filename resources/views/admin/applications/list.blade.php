@@ -19,10 +19,12 @@
         <th class="info info-customer">メールアドレス</th>
         <th class="info info-customer">ご住所</th>
         <th class="info info-customer">買取希望の金額</th>
+        <th class="info info-customer">ご希望のファクタリング形式</th>
 
         <th class="info info-live">売掛先の企業名</th>
         <th class="info info-live">ご住所</th>
         <th class="info info-live">その他情報</th>
+        <th class="info info-live">電話番号</th>
 
         <th class="info info-work">売掛先企業名</th>
         <th class="info info-work">売掛先企業の本社所在地</th>
@@ -85,6 +87,16 @@
             </div>
             @endif
             <hr>
+            <p>売掛先の請求書データ</p>
+            @if($application->photo_item)
+            <div class="img-download-wrap">
+              <img loading="lazy" src="{{ asset('files/contact/'.$application->photo_item) }}" alt="">
+              <a href="{{ asset('files/contact/'.$application->photo_item) }}" download>
+                <i class="fas fa-download"></i> ダウンロードする
+              </a>
+            </div>
+            @endif
+            <hr>
             <p>その他の画像</p>
             @if($application->photo_other)
             <div class="img-download-wrap">
@@ -136,10 +148,12 @@
         <td class="info info-customer">{{ $application->email }}</td>
         <td class="info info-customer">{{ $application->address }}</td>
         <td class="info info-customer">{{ $application->amount }}万円</td>
+        <td class="info info-customer">{{ $application->format }}</td>
 
         <td class="info info-live">{{ $application->company_office }}</td>
         <td class="info info-live">{{ $application->company_address }}</td>
         <td class="info info-live">{{ $application->company_other }}</td>
+        <td class="info info-live">{{ $application->company_phone_my }}</td>
 
 
         <td class="company_apartment_room info info-work">{{ $application->company_name }}</td>

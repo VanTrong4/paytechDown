@@ -42,7 +42,8 @@ class ApplicationController extends Controller
           ->orWhere('amount', 'LIKE', '%' . $keyword . '%')
           ->orWhere('company_office', 'LIKE', '%' . $keyword . '%')
           ->orWhere('company_address', 'LIKE', '%' . $keyword . '%')
-          ->orWhere('company_other', 'LIKE', '%' . $keyword . '%');
+          ->orWhere('company_other', 'LIKE', '%' . $keyword . '%')
+          ->orWhere('company_phone_my', 'LIKE', '%' . $keyword . '%');
       }
       return $query;
     })
@@ -58,7 +59,7 @@ class ApplicationController extends Controller
 
   public function edit(Application $application)
   {
-    $application->load('user');
+    $application->load('customer');
     return view('applications.edit', compact('application'));
   }
   public function update(Request $request, Application $application)
