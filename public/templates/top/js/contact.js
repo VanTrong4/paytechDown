@@ -1,6 +1,6 @@
 jQuery(function ($) {
 
-  const loadingHtml = $(`<div id="form-sending"><div class="sending-mask"></div> <div class="sending-content"><img src="/common/rolling.gif" alt="送信中">送信中</div></div>`);
+  const loadingHtml = $(`<div id="form-sending"><div class="sending-mask"></div> <div class="sending-content"><img src="./common/rolling.gif" alt="送信中">送信中</div></div>`);
   const stepConfirm = 1;
   /* kntxtext.target = [
     ['fullname', 'furigana', kntxtext.constant.letterType.kana, kntxtext.constant.insertType.auto],
