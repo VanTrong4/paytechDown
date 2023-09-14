@@ -23,7 +23,7 @@ class ApplicationToCustomerMail extends Mailable
     {
         $this->application = $application;
         $this->subject = getCustomerSubject();
-        $this->markdown = "top.emails." . ($application->company_name ? 'message_customer' : "contact_message_customer");
+        $this->markdown = "emails." . ($application->company_name ? 'message_customer' : "contact_message_customer");
     }
 
     /**

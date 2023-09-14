@@ -24,6 +24,11 @@ function prefix()
     }
 }
 
+function lp_pages()
+{
+  return config('lp.lp_pages') ? explode(",", config('lp.lp_pages')) : [];
+}
+
 function lp()
 {
     if($prefix = prefix())
@@ -37,7 +42,7 @@ function template($file)
 }
 function template_path()
 {
-    return 'templates/' . (prefix() ?: 'top/');   
+    return 'templates/' . (prefix() ?: 'top');   
 }
 
 function checkValidations(): bool

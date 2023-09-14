@@ -41,6 +41,15 @@ class RouteServiceProvider extends ServiceProvider
                 ->namespace('Admin')
                 ->middleware(['web', 'template:admin' ])
                 ->group(base_path('routes/admin.php'));
+                
+            foreach (lp_pages() as $lp) {
+                Route::prefix('admin')
+                ->name($lp . '.')
+                ->prefix($lp)
+                ->middleware(['web', "template:{$lp}"])
+                ->namespace($this->namespace)
+                ->group(base_path('routes/lp.php'));
+            }
         });
     }
 

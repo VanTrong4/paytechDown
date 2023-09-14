@@ -23,7 +23,7 @@ class ApplicationToAdminMail extends Mailable
     {
         $this->application  = $application;
         $this->subject = getAdminSubject();
-        $this->markdown =  "top.emails." . ($application->company_name ? 'message_admin' : "contact_message_admin");
+        $this->markdown =  "emails." . ($application->company_name ? 'message_admin' : "contact_message_admin");
     }
 
     /**

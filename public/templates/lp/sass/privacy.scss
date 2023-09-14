@@ -1,0 +1,30 @@
+@import "variable";
+.section__privacy{
+    padding-top: 5rem;
+    padding-bottom: 10rem;
+    @media screen and (max-width: 1100px) {
+       padding-bottom: 5rem;
+       }
+    .container{
+        width: 108.8rem;
+        margin: 0 auto;
+        @media screen and (max-width: 1100px) {
+           width: 100%;
+           padding: 0 1.5rem;
+          }
+          @include sp(){
+            font-size: 1.6rem;
+        }
+        .title-public{
+            margin-bottom: 5rem;
+            margin-top: 5rem;
+        }
+        .title-two{
+            font-size: 2.2rem;
+            font-weight: bold;
+            @include sp(){
+                font-size: 1.9rem;
+            }
+        }
+    }
+}

@@ -14,7 +14,7 @@ class PageController extends Controller
     {
         $data = $request;
         // dd($data);
-        return view('top.contact', compact('data'));
+        return view('contact', compact('data'));
     }
 
     public function submit ( Request $request)
