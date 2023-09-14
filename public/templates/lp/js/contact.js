@@ -33,7 +33,7 @@ jQuery(function ($) {
     var han = val.replace(/[A-Za-z0-9-!"#$%&'()=<>,.?_\[\]{}@^~\\]/g, function (s) { return String.fromCharCode(s.charCodeAt(0) + 65248) });
     $(ele).val(han);
   }
-  const pref_city_url = '../assets/js/pref_city.json';
+  const pref_city_url = '/common/pref_city.json';
   $.getJSON(pref_city_url, function (data) {
     for (var i = 1; i < 48; i++) {
       var code = ('00' + i).slice(-2);

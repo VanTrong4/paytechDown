@@ -572,7 +572,7 @@
 <script src="{{ template('/libs/jquery.validate.additional-methods.js') }}"></script>
 <script src="{{ template('/libs/multi-form.js') }}"></script>
 <script>
-const pref_city_url = "{{ template('/js/pref_city.json') }}";
+const pref_city_url = "{{ asset('/common/pref_city.json') }}";
 </script>
 <script src="{{ template('/js/step.js?v4') }}"></script>
 {{-- <?php 
