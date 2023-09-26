@@ -51,6 +51,7 @@ class Application extends Model
             $customer = Customer::whereEmail($model->email)->first();
             if(!$customer){
                 $customer = Customer::create([
+                    'register_date' =>  Carbon::now(),
                     'prefix'  =>  $model->prefix,
                     'email' =>  $model->email,
                     'fullname'  =>  $model->fullname,

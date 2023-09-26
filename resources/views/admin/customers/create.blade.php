@@ -40,6 +40,23 @@
             <tbody>
               <tr>
                 <th>
+                  <label for="register_date" class="ttl-group">
+                    登録日
+                  </label>
+                </th>
+                <td>
+                  <div class="form-group">
+                    <input type="date" id="register_date" name="register_date" value="{{ old('register_date', date('Y-m-d')) }}" class="form-control @error('register_date') is-invalid @enderror" required>
+                    @error('register_date')
+                    <span class="help-block show" role="alert">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>
                   <label for="name" class="ttl-group">
                     <span class="required">必須</span>名前
                   </label>

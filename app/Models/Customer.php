@@ -8,10 +8,15 @@ class Customer extends Model
 {
     protected $fillable = [
         'prefix',
+        'register_date',
         'email',
         'fullname',
         'phonenumber',
         'note'
+    ];
+
+    protected $casts = [
+        'register_date' =>  'date'
     ];
 
     public function applications()

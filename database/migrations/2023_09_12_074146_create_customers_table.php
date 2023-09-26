@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('fullname');
             $table->string('phonenumber');
             $table->text('note')->nullable();
+            $table->date('register_date')->nullable();
         });
     }
 

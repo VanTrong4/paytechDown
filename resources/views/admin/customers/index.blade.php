@@ -65,7 +65,7 @@
                   </a>
                 </td>
                 <td class="created_at">{{ strtoupper($customer->prefix?:"top") }}</td>
-                <td class="created_at">{{ $customer->created_at->format('Y年m月d日') }}</td>
+                <td class="created_at">{{ $customer->register_date->format('Y年m月d日') }}</td>
                 <td class="name">{{ $customer->fullname }}</td>
                 <td class="email">{{ $customer->email }}</td>
                 <td class="phonenumber">{{ $customer->phonenumber }}</td>

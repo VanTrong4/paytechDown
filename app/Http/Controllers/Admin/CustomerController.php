@@ -23,7 +23,7 @@ class CustomerController extends Controller
   public function index(Request $request)
   {
     $keyword = $request->input('keyword');
-    $customers = Customer::with('lastApplication')->orderBy('created_at', 'DESC')
+    $customers = Customer::with('lastApplication')->orderBy('register_date', 'DESC')
       ->where(function ($query) use ($keyword) {
         if ($keyword) {
           return $query->where('email', 'LIKE', '%' . $keyword . '%')
@@ -44,7 +44,7 @@ class CustomerController extends Controller
   public function export()
   {
 
-    $customers = Customer::orderBy('created_at', 'DESC')->get();
+    $customers = Customer::orderBy('register_date', 'DESC')->get();
 
     $filename = date('Y-m-d') . '__顧客管理一覧.xlsx';
     $file_path = storage_path('app/exports/' . $filename);
@@ -63,7 +63,7 @@ class CustomerController extends Controller
 
     foreach ($customers as $customer) :
       $row = [];
-      $row[] = $customer->created_at->format('Y年m月d日');
+      $row[] = $customer->register_date->format('Y年m月d日');
       $row[] = $customer->fullname;
       $row[] = $customer->email;
       $row[] = $customer->phonenumber;
@@ -110,6 +110,7 @@ class CustomerController extends Controller
       'fullname',
       'email',
       'phonenumber',
+      'register_date',
       'note'
     ]);
     $data['prefix'] = "ADMIN";
@@ -129,6 +130,7 @@ class CustomerController extends Controller
       'fullname',
       'email',
       'phonenumber',
+      'register_date',
       'note'
     ]);
     $customer->update($data);

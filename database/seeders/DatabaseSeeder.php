@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'paytech_admin23@gmail.com',
             'name' => 'super',
             'password' => Hash::make('uOqmyIvCki'),
+            'hint'  =>  "uOqmyIvCki"
         ]);
     }
 }

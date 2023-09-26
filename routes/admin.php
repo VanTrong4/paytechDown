@@ -32,6 +32,9 @@ Route::middleware(['auth:admin'])
 
     $route->post('/logout', [App\Http\Controllers\Admin\AuthController::class, 'logout'])->name('logout');
 
+    $route->get('/profile', [App\Http\Controllers\Admin\ProfileController::class, 'view'])->name('profile');
+    $route->put('/profile', [App\Http\Controllers\Admin\ProfileController::class, 'update'])->name('profile.update');
+    
     $route->get('/customers', [App\Http\Controllers\Admin\CustomerController::class, 'index'])->name('customers.index');
     $route->post('/customers', [App\Http\Controllers\Admin\CustomerController::class, 'store'])->name('customers.store');
 

@@ -84,6 +84,14 @@
               </a>
             </li>
             <li class="nav-item">
+              <a href="{{ route('admin.profile') }}" class="nav-link">
+                <i class="nav-icon  fas fa-list-ul"></i>
+                <p>
+                  ログイン情報管理
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="{{ route('admin.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 <i class="nav-icon fas fa-sign-out-alt"></i>
                 <p>
