@@ -54,7 +54,6 @@ class CustomerController extends Controller
       '登録日' => 'string',
       '名前' => 'string',
       'メールアドレス' => 'string',
-      'パスワード' => 'string',
       '携帯番号'  =>  'string'
     ];
 

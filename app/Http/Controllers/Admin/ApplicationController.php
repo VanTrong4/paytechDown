@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\Customer;
 use Illuminate\Http\Request;
 use App\Helper\XLSXWriterHelper;
 use App\Models\Application;
@@ -152,8 +152,8 @@ class ApplicationController extends Controller
 
   public function export(Request $request)
   {
-    $userId = $request->user;
-    $applications = Application::with(['user'])->whereHas('user', function ($query) use ($userId) {
+    $userId = $request->customer;
+    $applications = Application::with(['customer'])->whereHas('customer', function ($query) use ($userId) {
       if ($userId) {
         return $query->where('id', $userId);
       }
@@ -162,78 +162,72 @@ class ApplicationController extends Controller
 
     $filename = date('Y-m-d') . '__お申込み内容一覧.xlsx';
     if ($userId) {
-      $user = User::find($userId);
+      $user = customer::find($userId);
       $filename = date('Y-m-d') . "__{$user->id}__{$user->name}__お申込み内容一覧.xlsx";
     }
     $file_path = storage_path('app/exports/' . $filename);
 
     $writer = new XLSXWriterHelper();
     $header = [
+      "登録元サイト"  =>  "string",
       "お申込み日"  =>  "string",
-      "名前"  =>  "string",
-      "フリガナ"  =>  "string",
-      "生年月日"  =>  "string",
-      "性別"  =>  "string",
+      "御社名"  =>  "string",
+      "ご担当者名"  =>  "string",
+      "ご連絡先電話番号"  =>  "string",
       "メールアドレス"  =>  "string",
-      "パスワード"  =>  "string",
-      "ご希望の連絡方法"  =>  "string",
-      "LINE ID"  =>  "string",
-      "郵便番号"  =>  "string",
-      "都道府県"  =>  "string",
-      "市区町村"  =>  "string",
-      "番地"  =>  "string",
-      "マンション名・部屋番号"  =>  "string",
-      "勤務先の情報 郵便番号"  =>  "string",
-      "勤務先の情報 都道府県"  =>  "string",
-      "勤務先の情報 市区町村"  =>  "string",
-      "勤務先の情報 番地"  =>  "string",
-      "勤務先の情報 マンション名・部屋番号"  =>  "string",
-      "勤務先の情報 電話番号"  =>  "string",
-      "銀行名"  =>  "string",
-      "支店名"  =>  "string",
-      "支店番号"  =>  "string",
-      "口座の種類"  =>  "string",
-      "口座番号"  =>  "string",
-      "口座名義(カナ)" =>  "string",
-      "セルフィー（自画撮り）" => "string",
-      "運転免許証、または顔写真付きの身分証明書-表面" => "string",
-      "運転免許証、または顔写真付きの身分証明書-裏面" => "string",
+      "ご住所"  =>  "string",
+      "買取希望の金額"  =>  "string",
+      "ご希望のファクタリング形式"  =>  "string",
+      "売掛先の企業名"  =>  "string",
+      "ご住所"  =>  "string",
+      "その他情報"  =>  "string",
+      "電話番号"  =>  "string",
+      "売掛先企業名"  =>  "string",
+      "売掛先企業の本社所在地"  =>  "string",
+      "売掛先の企業規模"  =>  "string",
+      "売掛先の資本金"  =>  "string",
+      "売掛先の業歴"  =>  "string",
+      "売掛先とのお取引回数"  =>  "string",
+      "売掛先との契約書の有無"  =>  "string",
+      "資金調達QUICKの利用回数"  =>  "string",
+      "売掛先へのご請求金額"  =>  "string",
+      "概算の手数料"  =>  "string",
+      "資金調達成功率"  =>  "string",
     ];
-
-
+    
     $writer->writeSheetHeader('お申込み内容一覧', $header, ['fill' => "#375623", 'color' => '#fff', 'freeze_rows' => 1, 'font-style' => 'bold',  'widths' => [20, 25, 25, 20, 30, 30, 20, 25, 20, 20, 20, 30, 20, 30, 40]]);
 
     foreach ($applications as $application) :
       $row = [];
+      $row[] = $application->prefix;
       $row[] = $application->created_at->format('Y年m月d日');
-      $row[] = $application->user->name;
-      $row[] = $application->user->furigana;
-      $row[] = $application->user->birthday->format('Y年m月d日');
-      $row[] = $application->user->gender;
-      $row[] = $application->user->email;
-      $row[] = $application->user->hint;
-      $row[] = $application->preferred_contact;
-      $row[] = $application->line_id;
-      $row[] = "〒{$application->zipcode1}-{$application->zipcode2}";
-      $row[] = $application->prefect;
-      $row[] = $application->district;
+      $row[] = $application->company;
+      $row[] = $application->fullname;
+      $row[] = $application->phonenumber;
+      $row[] = $application->email;
       $row[] = $application->address;
-      $row[] = $application->apartment_room;
-      $row[] = "〒{$application->company_zipcode1}-{$application->company_zipcode2}";
-      $row[] = $application->company_prefect;
-      $row[] = $application->company_district;
+      $row[] = "{$application->amount}万円";
+      $row[] = $application->format;
+
+      $row[] = $application->company_office;
       $row[] = $application->company_address;
-      $row[] = $application->company_apartment_room;
-      $row[] = $application->company_phonenumber;
-      $row[] = $application->bank_name;
-      $row[] = $application->branch_name;
-      $row[] = $application->branch_number;
-      $row[] = $application->account_type;
-      $row[] = $application->account_number;
-      $row[] = $application->account_name_kana;
-      $row[] = asset('storage/profile/' . $application->photo_selfie);
-      $row[] = asset('storage/profile/' . $application->photo_1);
-      $row[] = asset('storage/profile/' . $application->photo_2);
+      $row[] = "$application->company_other";
+      $row[] = $application->company_name;
+      $row[] = "{$application->prefect}{$application->city}";
+      $row[] = $application->company_size;
+      $row[] = $application->receivable_capital;
+      $row[] = "〒{$application->business_history}-{$application->company_zipcode2}";
+      $row[] = $application->number_of_transactions;
+      $row[] = $application->has_contract;
+      $row[] = $application->quick_was_used;
+      $row[] = "{$application->billing}%〜";
+      $row[] = "{$application->percent}%〜";
+      $row[] = "{$application->fundraising_price}万円～";
+      
+      $row[] = asset('public/files/contact/' . $application->photo_id_1);
+      $row[] = asset('public/files/contact/' . $application->photo_id_2);
+      $row[] = asset('public/files/contact/' . $application->photo_bill);
+      $row[] = asset('public/files/contact/' . $application->photo_item);
       $writer->writeSheetRow('お申込み内容一覧', $row,  array('valign' => 'top', 'wrap_text' => true));
     endforeach;
 
