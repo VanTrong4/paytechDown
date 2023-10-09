@@ -5,7 +5,7 @@
         <th colspan="3"></th>
         <th class="text-center info info-customer" colspan="8">お客様の情報入力</th>
         <th class="text-center info info-live" colspan="3">売掛先企業の情報入力 </th>
-        <th class="text-center info info-work" colspan="12">勤務先の情報</th>
+        <th class="text-center info info-work" colspan="13">勤務先の情報</th>
       </tr>
       <tr>
         <th class="action action-status">ステータス</th>
@@ -37,7 +37,6 @@
         <th class="info info-work">売掛先へのご請求金額</th>
         <th class="info info-work">概算の手数料</th>
         <th class="info info-work">資金調達成功率</th>
-        <th class="info info-work">資金調達可能額</th>
       </tr>
     </thead>
     <tbody>
