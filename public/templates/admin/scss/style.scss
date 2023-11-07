@@ -362,72 +362,72 @@ img {
         &-new {
             + select {
                 color: #fff;
-                background-color: #6c757d;
+                background-color: #6C757D;
             }
         }
         &-review {
             + select {
                 color: #000;
-                background-color: #f79632;
+                background-color: #F79632;
             }
         }
         &-contract {
             + select {
                 color: #fff;
-                background-color: #ff3399;
+                background-color: #FF3399;
             }
         }
         &-waiting_for_payment {
             + select {
                 color: #000;
-                background-color: #f7adc3;
-            }
-        }
-        &-no_results {
-            + select {
-                color: #000;
-                background-color: #d59ddf;
+                background-color: #F7ADC3;
             }
         }
         &-send_off {
             + select {
                 color: #000;
-                background-color: #ffedb3;
+                background-color: #FFEDB3;
             }
         }
-        &-no_line {
+        &-additional_information {
             + select {
                 color: #000;
-                background-color: #b2d235;
+                background-color: #F1E266;
             }
         }
-        &-additional_resources {
+        &-current_customer {
             + select {
                 color: #000;
-                background-color: #f1e266;
+                background-color: #AFDFE4;
             }
         }
-        &-complete {
-            + select {
-                color: #000;
-                background-color: #afdfe4;
-            }
-        }
-        &-refuse {
+        &-declines {
             + select {
                 color: #fff;
-                background-color: #cd0e0e;
+                background-color: #CD0E0E;
             }
         }
         &-payment {
             + select {
-                background-color: #460fed;
+                color: #fff;
+                background-color: #460FED;
+            }
+        }
+        &-past_contract {
+            + select {
+                color: #fff;
+                background-color: #B2D235;
+            }
+        }
+        &-unable_contact {
+            + select {
+                background-color: #D59DDF;
                 color: #fff;
             }
         }
-        &-unshipped {
+        &-promising {
             + select {
-                background: #7e0712;
+                background: #7E0712;
                 color: #fff;
             }
         }
@@ -600,61 +600,61 @@ img.img_attchment {
 .tr-color {
     &-new {
         color: #fff;
-        background-color: #6c757d;
+        background-color: #6C757D;
     }
 
     &-review {
         color: #000;
-        background-color: #f79632;
+        background-color: #F79632;
     }
 
     &-contract {
         color: #fff;
-        background-color: #ff3399;
+        background-color: #FF3399;
     }
 
     &-waiting_for_payment {
         color: #000;
-        background-color: #f7adc3;
-    }
-
-    &-no_results {
-        color: #000;
-        background-color: #d59ddf;
+        background-color: #F7ADC3;
     }
 
     &-send_off {
         color: #000;
-        background-color: #ffedb3;
+        background-color: #FFEDB3;
     }
 
-    &-no_line {
+    &-additional_information {
         color: #000;
-        background-color: #b2d235;
+        background-color: #F1E266;
     }
 
-    &-additional_resources {
+    &-current_customer {
         color: #000;
-        background-color: #f1e266;
+        background-color: #AFDFE4;
     }
 
-    &-complete {
-        color: #000;
-        background-color: #afdfe4;
-    }
-
-    &-refuse {
+    &-declines {
         color: #fff;
-        background-color: #cd0e0e;
+        background-color: #CD0E0E;
     }
 
     &-payment {
-        background-color: #460fed;
+        color: #fff;
+        background-color: #460FED;
+    }
+
+    &-past_contract {
+        color: #fff;
+        background-color: #B2D235;
+    }
+
+    &-unable_contact {
+        background-color: #D59DDF;
         color: #fff;
     }
 
-    &-unshipped {
-        background: #7e0712;
+    &-promising {
+        background: #7E0712;
         color: #fff;
     }
 }

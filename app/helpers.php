@@ -108,7 +108,7 @@ function list_prefect()
 }
 function list_status()
 {
-  return ['new', 'review', 'contract', 'waiting_for_payment', 'no_results', 'send_off', 'no_line', 'additional_resources', 'complete', 'refuse', 'payment', 'unshipped'];
+  return ['new', 'review', 'contract', 'waiting_for_payment', 'send_off', 'additional_information', 'current_customer', 'declines', 'payment', 'past_contract', 'unable_contact', 'promising'];
 }
 function application_status_admin($status)
 {
@@ -118,25 +118,25 @@ function application_status_admin($status)
     case 'review':
       return "審査中";
     case 'contract':
-      return "契約書";
+      return "契約中";
     case 'waiting_for_payment':
       return "入金待ち";
-    case  'no_results':
-      return "結果出ず";
     case 'send_off':
       return "見送り";
-    case 'no_line':
-      return "LINEなし";
-    case  'additional_resources':
-      return "追加資料";
-    case 'complete':
+    case 'additional_information':
+      return "追加資料待ち";
+    case 'current_customer':
       return "現客";
-    case 'refuse':
+    case 'declines':
       return "当社断り";
     case 'payment':
       return "決済";
-    case 'unshipped':
-      return "未発送";
+    case 'past_contract':
+      return "過去契約";
+    case 'unable_contact':
+      return "連絡取れず";
+    case 'promising':
+      return "見込みあり";
     default:
       return $status;
   }

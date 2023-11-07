@@ -98,6 +98,7 @@ html * {
   background-size: contain;
   left: 3.4rem;
   top: 50%;
+  -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
 }
 #faq .btn-low .btn-lowy::after {
@@ -109,6 +110,7 @@ html * {
   background-size: contain;
   right: 3rem;
   top: 50%;
+  -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
 }
 #faq .faqs {
@@ -313,6 +315,7 @@ html * {
   background-size: contain;
   left: 3.4rem;
   top: 50%;
+  -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
 }
 @media screen and (max-width: 767px) {
@@ -329,6 +332,7 @@ html * {
   background-size: contain;
   right: 3rem;
   top: 50%;
+  -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
 }
 @media screen and (max-width: 767px) {
@@ -702,6 +706,7 @@ html * {
   background-size: contain;
   left: 3.4rem;
   top: 50%;
+  -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
 }
 .section__tech .container .btn-low .btn-lowy::after {
@@ -713,6 +718,7 @@ html * {
   background-size: contain;
   right: 3rem;
   top: 50%;
+  -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
 }
 
@@ -840,6 +846,7 @@ html * {
   width: 1.9rem;
   height: 2.6rem;
   top: 50%;
+  -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
   left: -4rem;
 }
@@ -851,6 +858,7 @@ html * {
   width: 1.9rem;
   height: 2.6rem;
   top: 50%;
+  -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
   right: -4rem;
 }
@@ -899,6 +907,7 @@ html * {
   background-size: contain;
   left: 3.4rem;
   top: 50%;
+  -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
 }
 .section__yau .container .btn-yaw .btn-yawy::after {
@@ -910,6 +919,7 @@ html * {
   background-size: contain;
   right: 3rem;
   top: 50%;
+  -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
 }
 
@@ -960,6 +970,7 @@ html * {
   background-size: contain;
   left: 3.4rem;
   top: 50%;
+  -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
 }
 .section__step .container .btn-low .btn-lowy::after {
@@ -971,6 +982,7 @@ html * {
   background-size: contain;
   right: 3rem;
   top: 50%;
+  -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
 }
 .section__step .container .note-step {
@@ -1209,6 +1221,7 @@ html * {
   background-size: contain;
   left: 3.4rem;
   top: 50%;
+  -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
 }
 .section__brand .container .btn-low .btn-lowy::after {
@@ -1220,6 +1233,7 @@ html * {
   background-size: contain;
   right: 3rem;
   top: 50%;
+  -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
 }
 
@@ -1326,6 +1340,7 @@ html * {
   background-size: contain;
   left: 3.4rem;
   top: 50%;
+  -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
 }
 .section__member .btn-low .btn-lowy::after {
@@ -1337,6 +1352,7 @@ html * {
   background-size: contain;
   right: 3rem;
   top: 50%;
+  -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
 }
 @media screen and (max-width: 1500px) {
@@ -1469,6 +1485,7 @@ html * {
   width: 1.2rem;
   height: 2.5rem;
   top: 50%;
+  -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
   left: -4rem;
 }
@@ -1480,6 +1497,7 @@ html * {
   width: 1.2rem;
   height: 2.5rem;
   top: 50%;
+  -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%);
   right: -4rem;
 }
@@ -1542,4 +1560,4 @@ html * {
   .section__cloud .container .content-cloud {
     font-size: 14px;
   }
-}
+}/*# sourceMappingURL=top.css.map */

@@ -106,16 +106,6 @@ class ApplicationController extends Controller
     $application = Application::find($request->id);
     if (!$application)
       return response()->json(['status' => false, 'msg' => 'Not found!']);
-    if (
-      $request->status == 'complete'
-      && (!$application->contract_date
-        || !$application->contract_purchase_method
-        || !$application->contract_purchased_product
-        || !$application->contract_product_qty
-        || !$application->contract_purchased_amount
-      )
-    )
-      return response()->json(['status' => false, 'msg' => '契約日を入力してください']);
     Application::find($request->id)->update(['status' =>  $request->status]);
     return response()->json(['status' => true]);
   }

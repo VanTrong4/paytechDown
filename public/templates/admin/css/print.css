@@ -1,1 +1,134 @@
-@media print{body{font-family:"游明朝","Yu Mincho","游明朝体","YuMincho","ヒラギノ明朝 Pro W3","Hiragino Mincho Pro","HiraMinProN-W3","Sawarabi Mincho","HGS明朝E","ＭＳ Ｐ明朝","MS PMincho",serif;padding:100px 70px;font-size:14px;line-height:1.7;max-width:800px;margin:0 auto;position:relative;text-align:justify;padding:100px 70px;box-sizing:border-box;background-color:#fff}}.bg-print{background-color:#e9e9e9;padding:50px 0}#print-content{font-size:14px;line-height:1.7;max-width:800px;margin:0 auto;position:relative;text-align:justify;padding:100px 70px;box-sizing:border-box;background-color:#fff}@media not print{#print-content{border:1px solid #ccc}}#print-content ul,#print-content p{margin-top:0;margin-bottom:1rem}#print-content .nm{margin-bottom:0}#print-content h1{text-align:center !important;font-size:22px;margin-top:0;font-weight:bold;margin-bottom:30px}#print-content table,#print-content th,#print-content td{border:1px solid}#print-content table{border-collapse:collapse}#print-content th,#print-content td{padding:15px}#print-content .empty{background-color:#ccc;position:fixed;left:0;right:0;height:50px}#print-content .top{top:0}#print-content .bot{bottom:0}#print-content .pagebreak{page-break-before:always}#print-content ul{margin-left:0;margin-bottom:1rem;padding-left:0;list-style:none;counter-reset:counter-ul}#print-content ul>li{position:relative;padding-left:0}#print-content ul>li::before{position:absolute;left:0}#print-content ol{margin-top:0;margin-bottom:1rem;padding-left:20px;list-style:none;counter-reset:counter-ol}#print-content ol>li{position:relative;padding-left:0}#print-content ul>li>ol{margin-left:0;padding-left:0;margin-bottom:0}#print-content ol>li::before{position:absolute;left:0}#print-content input{font:inherit;border:none;border-bottom:1px dashed;outline:none;padding:0px 5px;line-height:1}#print-content input:focus{border-bottom-color:#007bff}/*# sourceMappingURL=print.css.map */
+@charset "UTF-8";
+@media print {
+  body {
+    font-family: "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "Sawarabi Mincho", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+    padding: 100px 70px;
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    text-align: justify;
+    padding: 100px 70px;
+    box-sizing: border-box;
+    background-color: #fff;
+  }
+}
+
+.bg-print {
+  background-color: #e9e9e9;
+  padding: 50px 0;
+}
+
+#print-content {
+  /*  font-family: "游明朝", "Yu Mincho", "游明朝体", "YuMincho",
+      "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3",
+      "Sawarabi Mincho", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", serif; */
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  text-align: justify;
+  padding: 100px 70px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+@media not print {
+  #print-content {
+    border: 1px solid #ccc;
+  }
+}
+#print-content ul,
+#print-content p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+#print-content .nm {
+  margin-bottom: 0;
+}
+#print-content h1 {
+  text-align: center !important;
+  font-size: 22px;
+  margin-top: 0;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+#print-content table,
+#print-content th,
+#print-content td {
+  border: 1px solid;
+}
+#print-content table {
+  border-collapse: collapse;
+}
+#print-content th,
+#print-content td {
+  padding: 15px;
+}
+#print-content .empty {
+  background-color: #ccc;
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 50px;
+}
+#print-content .top {
+  top: 0;
+}
+#print-content .bot {
+  bottom: 0;
+}
+#print-content .pagebreak {
+  page-break-before: always;
+}
+#print-content ul {
+  margin-left: 0;
+  margin-bottom: 1rem;
+  padding-left: 0;
+  list-style: none;
+  counter-reset: counter-ul;
+}
+#print-content ul > li {
+  position: relative;
+  padding-left: 0;
+}
+#print-content ul > li::before {
+  position: absolute;
+  left: 0; /* 
+counter-increment: counter-ul;
+content: counter(counter-ul) "."; */
+}
+#print-content ol {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-left: 20px;
+  list-style: none;
+  counter-reset: counter-ol;
+}
+#print-content ol > li {
+  position: relative;
+  padding-left: 0;
+}
+#print-content ul > li > ol {
+  margin-left: 0;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+#print-content ol > li::before {
+  position: absolute;
+  left: 0; /* 
+counter-increment: counter-ol;
+content: "(" counter(counter-ol) ")"; */
+}
+#print-content input {
+  font: inherit;
+  border: none;
+  border-bottom: 1px dashed;
+  outline: none;
+  padding: 0px 5px;
+  line-height: 1;
+}
+#print-content input:focus {
+  border-bottom-color: #007bff;
+}/*# sourceMappingURL=print.css.map */
