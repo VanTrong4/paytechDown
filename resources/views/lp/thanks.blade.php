@@ -3,7 +3,6 @@
 @section('title', 'お申し込み送信完了｜PayTech -ペイテック-')
 @section('description', 'この度は『PayTech(ペイテック)』にお申し込み頂き、誠にありがとうございます。')
 @push('head')
-<meta name="robot" content="noindex,nofollow">
 <!-- <link rel="stylesheet" href="{{ template('/css/top.css?3') }}"> -->
     <script type="application/ld+json">
       {
