@@ -1,9 +1,10 @@
 @extends(lp() ?: 'top.'.'layouts.master')
 
-@section('title', '404 Not Found｜PayTech(ペイテック)')
-@section('description', '申し訳ありません。お探しのページは見つかりませんでした。もしご不明な点やお困りのことがございましたら、お手数ですが弊社のサポートチームまでお問い合わせください。')
+@section('title', '404')
+@section('description', '')
 @push('head')
-<link rel="stylesheet" href="{{ template('/css/top.css?v20232628') }}">
+<meta name="robots" content="noindex,nofollow">
+<!-- <link rel="stylesheet" href="{{ template('/css/top.css?3') }}"> -->
 <script type="application/ld+json">
  {
    "@context": "https://schema.org",
@@ -51,7 +52,6 @@
 @endsection
 
 @push('footer')
-
 <link
     href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
     rel="stylesheet">

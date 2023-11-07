@@ -8,7 +8,6 @@
     <title>@yield('title')</title>
     <link rel="canonical" href="{{ canonical() }}">
     <meta name="description" content="@yield('description')">
-
     <meta property="og:locale" content="ja_JP">
     <meta property="og:type" content="{{ request()->routeIs(lp().'home') ? 'website' : 'article' }}">
     <meta property="og:title" content="@yield('title')">
@@ -20,14 +19,15 @@
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/jpeg">
     <meta name="twitter:card" content="summary_large_image">
-    @stack('meta')
-
+@stack('meta')
     <link rel="icon" type="image/ico" href="{{ asset('favicon.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="{{ template('/css/amination.css') }}">
     <link rel="stylesheet" href="{{ template('/css/style.css') }}">
     <link rel="stylesheet" href="{{ template('/css/form.css') }}">
+    <meta name="robot" content="noindex,nofollow">
+    @stack('head')
     <style>
         body,.quick-content{
             font-family: "Noto Sans JP",sans-serif !important;
@@ -64,11 +64,10 @@
             visibility: hidden;
         }
     </style>
-    @stack('head')
 </head>
 
 <body>
-    @stack('open_body')
+@stack('open_body')
     <div id="loading"></div>
     <header id="header">
         <div class="header">
@@ -101,47 +100,44 @@
             </div>
         </div>
     </header>
+@yield('content')
+<footer>
+    <div class="four-cols">
+        <div class="col">
+            <div class="sub">
+                <p class="title"><a href="{{ route(lp().'home') }}">
+                        <img src="{{ template('/images/logo-header.png') }}" alt="PAYTECH ペイテック">
+                    </a></p>
 
-    @yield('content')
-
-    <footer>
-        <div class="four-cols">
-            <div class="col">
-                <div class="sub">
-                    <p class="title"><a href="{{ route(lp().'home') }}">
-                            <img src="{{ template('/images/logo-header.png') }}" alt="PAYTECH ペイテック">
-                        </a></p>
-    
-                </div>
-            </div>
-            <div class="col">
-                <div class="sub">
-                    <ul class="nav-one">
-                        <li><a href="{{ route(lp().'home') }}">TOP</a></li>
-                        <li><a href="{{ route(lp().'contact') }}">お申し込み</a></li>
-                        <li><a href="{{ route(lp().'privacy-policy') }}">プライバシーポリシー</a></li>
-                    </ul>
-                </div>
-                <div class="sub social">
-                    <strong>TEL：<a href="tel:03-5830-6464">03-5830-6464</a></strong><br>
-                    営業時間：9：00〜18：00<br>
-                    定休日：土日・祝日
-                </div>
             </div>
         </div>
-        <div class="copyright">(NEW2)Copyright © 2023 PayTech. All rights reserved.</div>
-    </footer>
-    <button id="back-to-top"><img src="{{ template('/images/icon-circle-arrow-top.png') }}" width="48" height="48" alt="TOPに戻る"></button>
-    
-    <script>
-        window.onload = function() {
-            if (document.getElementById('loading')) {
-                const spinner = document.getElementById('loading');
-                spinner.classList.add('loaded');
-            }
+        <div class="col">
+            <div class="sub">
+                <ul class="nav-one">
+                    <li><a href="{{ route(lp().'home') }}">TOP</a></li>
+                    <li><a href="{{ route(lp().'contact') }}">お申し込み</a></li>
+                    <li><a href="{{ route(lp().'privacy-policy') }}">プライバシーポリシー</a></li>
+                </ul>
+            </div>
+            <div class="sub social">
+                <strong>TEL：<a href="tel:03-5830-6464">03-5830-6464</a></strong><br>
+                営業時間：9：00〜18：00<br>
+                定休日：土日・祝日
+            </div>
+        </div>
+    </div>
+    <div class="copyright">(NEW2)Copyright © 2023 PayTech. All rights reserved.</div>
+</footer>
+<button id="back-to-top"><img src="{{ template('/images/icon-circle-arrow-top.png') }}" width="48" height="48" alt="TOPに戻る"></button>
+@stack('footer')
+<script>
+    window.onload = function() {
+        if ($('#loading').length) {
+            const spinner = document.getElementById('loading');
+            spinner.classList.add('loaded');
         }
-    </script>
-    @stack('footer')
+    }
+</script>
 </body>
 
 </html>

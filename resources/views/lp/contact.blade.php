@@ -3,7 +3,7 @@
 @section('title', 'お申し込みフォーム｜PayTech -ペイテック-')
 @section('description', '『PayTech(ペイテック)』のお申し込みフォームページになります。査定は無料で行いますので、こちらのフォームからお申し込み下さい。')
 @push('head')
-<link rel="stylesheet" href="{{ template('/css/form.css?3') }}">
+<!-- <link rel="stylesheet" href="{{ template('/css/form.css?3') }}"> -->
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -12,13 +12,13 @@
         "@type": "ListItem",
         "position": 1,
         "name": "PayTech（ペイテック） TOP",
-        "item": "https://paytech-factoring.com/"
+        "item": "https://paytech-factoring.com/lp/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "お申し込みフォーム",
-        "item": "https://paytech-factoring.com/contact/"
+        "item": "https://paytech-factoring.com/lp/contact/"
       }
     ]
   }

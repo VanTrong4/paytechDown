@@ -154,3 +154,11 @@
     </div>
 </main>
 @endsection
+@push('footer')
+<link
+    href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet">
+<script src="{{ template('/libs/jquery-3.6.1.min.js') }}"></script>
+<script src="{{ template('/libs/aos/aos.js') }}"></script>
+<script src="{{ template('/js/script.js') }}"></script>
+@endpush

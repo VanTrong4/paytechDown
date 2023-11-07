@@ -3,7 +3,7 @@
 @section('title', 'PayTech(ペイテック)｜請求書を買取り最速最短で資金調達')
 @section('description', '「売掛金の回収が間に合わない！」など資金調達のお悩みは尽きないものです。そのお悩み『PayTech(ペイテック)』にお任せください。業界“最速”の審査時間と業界“最安”の手数料を実現！資金調達でお悩みのお客様を手助けいたします。')
 @push('head')
-<link rel="stylesheet" href="{{ template('/css/top.css?v20232628') }}">
+<!-- <link rel="stylesheet" href="https://paytech-factoring.com/assets/css/top.css?3"> -->
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
@@ -70,6 +70,7 @@
                         <div>
                             <form method="POST" action="{{ route(lp().'gotoContact') }}" id="form_step">
                                 @csrf
+
                                 <input type="hidden" name="prefect_txt" id="prefect_txt">
                                 <input type="hidden" name="city_txt" id="city_txt">
                                 <div class="tab">
@@ -557,14 +558,12 @@
     </div>
 </main>
 @endsection
-
 @push('footer')
-
 {{-- <?php if(isNotTestSpeed()):?> --}}
 <link
     href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
-    rel="stylesheet">
-{{-- <?php endif;?> --}}
+    rel="stylesheet">{{-- <?php endif;?> --}}
+<link rel="stylesheet" href="{{ template('/css/top.css?v20232628') }}">
 <script src="{{ template('/libs/jquery-3.6.1.min.js') }}"></script>
 <script src="{{ template('/libs/aos/aos.js') }}"></script>
 <script src="{{ template('/js/script.js') }}"></script>

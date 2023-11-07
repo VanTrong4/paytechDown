@@ -3,33 +3,34 @@
 @section('title', 'お申し込み送信完了｜PayTech -ペイテック-')
 @section('description', 'この度は『PayTech(ペイテック)』にお申し込み頂き、誠にありがとうございます。')
 @push('head')
-    <link rel="stylesheet" href="{{ template('/css/top.css?v20232628') }}">
+<meta name="robot" content="noindex,nofollow">
+<!-- <link rel="stylesheet" href="{{ template('/css/top.css?3') }}"> -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "PayTech（ペイテック） TOP",
-        "item": "https://paytech-factoring.com/"
-        },
-        {
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
           "@type": "ListItem",
-          "position": 2,
-          "name": "お申し込みフォーム",
-          "item": "https://paytech-factoring.com/contact/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "送信完了",
-          "item": "https://paytech-factoring.com/thanks/"
-        }
-      ]
-    }
-  </script>
+          "position": 1,
+          "name": "PayTech（ペイテック） TOP",
+          "item": "https://paytech-factoring.com/lp/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "お申し込みフォーム",
+            "item": "https://paytech-factoring.com/lp/contact/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "送信完了",
+            "item": "https://paytech-factoring.com/lp/thanks/"
+          }
+        ]
+      }
+    </script>
 @endpush
 
 @section('content')
@@ -80,5 +81,4 @@
 <script src="{{ template('/libs/jquery-3.6.1.min.js') }}"></script>
 <script src="{{ template('/libs/aos/aos.js') }}"></script>
 <script src="{{ template('/js/script.js') }}"></script>
-
 @endpush
