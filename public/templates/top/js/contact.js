@@ -262,7 +262,7 @@ jQuery(function ($) {
         confirm_tag.html(`<div class="preview"><div class="preview_img"><img src="${src}"></div><span>${name}</span></div>`)
         break;
       case "pdf":
-        confirm_tag.html(`<div class="preview"><div class="preview_pdf"><img src="../assets/images/icon-pdf.svg"></div><span>${name}</span></div>`)
+        confirm_tag.html(`<div class="preview"><div class="preview_pdf"><img src="./templates/top/images/icon-pdf.svg"></div><span>${name}</span></div>`)
         break;
       default:
         confirm_tag.html('');
